@@ -40,29 +40,7 @@ export default function AssetExample() {
 
   
 
-  const handleButtonPress = () => {
-
-    
-
-
-    var ddmmyyyy = inputValue2+"-"+inputValue1+"-"+inputValue;
-    console.log('Day field value:', inputValue);
-    if (inputValue==""){
-      console.log('Day field is empty:');
-    }
-    // Perform any desired actions with the input value
-    console.log('Month field value:', inputValue1);
-    if (inputValue1==""){
-      console.log('Month field is empty:');
-    }
-    // Perform any desired actions with the input value
-    console.log('Year field value:', inputValue2);
-    if (inputValue2==""){
-      console.log('Year field is empty:');
-    }
-    // Perform any desired actions with the input value
-    console.log("string is: "+ddmmyyyy);
-  };
+  
 
   var _day = 32;
   var _month =13;
@@ -74,6 +52,7 @@ export default function AssetExample() {
     return null;
   }
   const test = () =>{
+    var ddmmyyyy = inputValue2+"-"+inputValue1+"-"+inputValue; 
 
     const birth = moment('1998-07-16');
     const now = moment(Date.now());
@@ -96,7 +75,6 @@ export default function AssetExample() {
     setShouldShowmonth(!shouldShowmonth);
     //setShouldShowyear(!shouldShowyear);
     //handle();
-    handleButtonPress();
     var ddmmyyyy = inputValue2+"-"+inputValue1+"-"+inputValue;
     if (parseInt(inputValue)>31 ){
       seterrMsg1('Must be a valid day')
@@ -145,8 +123,11 @@ export default function AssetExample() {
     // <View style={tw`h-550px w-840px bg-red-500 rounded-t-3xl mt-15 mx-300px`}>
     <View style={tw`h-651px w-840px bg-[#eeeeee] rounded-t-3xl mt-15 mx-300px`}>
       <View style={tw`rounded-t-3xl`}>
-        
-        <View style={tw`h-157px w-840px bg-white flex-row rounded-t-3xl`}>
+
+
+        {/* Day Month Year Contaier */}
+        <View style={tw`h-160px w-840px bg-white flex-row rounded-t-3xl`}>
+          {/* Day block */}
           <View style={tw`w-160px h-100px  ml-56px  mt-57px rounded-lg`}>
             <Text style={textStyle}>DAY</Text>
             <TextInput 
@@ -155,6 +136,7 @@ export default function AssetExample() {
               onChangeText={text => setInputValue(text)}
               />
           </View>
+          {/* Month block */}
           <View style={tw`w-160px h-100px ml-32px  mt-57px rounded-lg`}>
             <Text style={textStyle}>MONTH</Text>
             <TextInput 
@@ -164,6 +146,7 @@ export default function AssetExample() {
               onChangeText={text => setInputValue1(text)}
               />
           </View>
+          {/* Year block */}
           <View style={tw`w-160px h-100px ml-32px mr-240px  mt-57px rounded-lg`}>
             <Text style={textStyle}>YEAR</Text>
             <TextInput 
@@ -174,10 +157,11 @@ export default function AssetExample() {
               />
           </View>
         </View>
-        <View style={tw``}>
-        {/*Here we will return the view when state is true 
-        and will return false if state is false*/}
-        <View style={tw`h-30px flex-row bg-white`}>
+
+
+        
+        
+        
           {shouldShowday ? (
           <View style={tw`w-160px ml-56px`}>
             <Text style={tw`text-[#FF5757] italic`}>{errMsg1}</Text> 
@@ -193,8 +177,8 @@ export default function AssetExample() {
               <Text style={tw`text-[#FF5757] italic`}>{errMsg3}</Text>           
             </View>
         ) : null}
-        </View>
-      </View>
+        
+    
       </View>
       
 
