@@ -8,7 +8,7 @@ import Agingresult from './AgingResult'
 
 
 
-export default function AssetExample() {
+export default function AssetExampleMobile() {
   //Imput fields
   const [inputValue, setInputValue] = useState('');
   const [inputValue1, setInputValue1] = useState('');
@@ -162,14 +162,14 @@ export default function AssetExample() {
 
   return (
     // <View style={tw`h-550px w-840px bg-red-500 rounded-t-3xl mt-15 mx-300px`}>
-    <View style={tw`h-651px w-840px bg-[#eeeeee] rounded-t-3xl mt-15 mx-300px`}>
+    <View style={tw`h-486px w-343px bg-[#eeeeee] rounded-t-3xl mt-15 mx-300px`}>
       <View style={tw`rounded-t-3xl`}>
 
 
         {/* Day Month Year Contaier */}
-        <View style={tw`h-160px w-840px bg-white flex-row rounded-t-3xl`}>
+        <View style={tw`h-160px w-343px bg-white flex-row rounded-t-3xl`}>
           {/* Day block */}
-          <View style={tw`w-160px h-100px  ml-56px  mt-57px rounded-lg`}>
+          <View style={tw`h-81px w-85px  ml-24px  mt-53px rounded-lg`}>
             <Text style={textStyle}>DAY</Text>
             <TextInput 
               style={imputStyle} 
@@ -178,7 +178,7 @@ export default function AssetExample() {
               />
           </View>
           {/* Month block */}
-          <View style={tw`w-160px h-100px ml-32px  mt-57px rounded-lg`}>
+          <View style={tw`h-81px w-85px ml-16px  mt-57px rounded-lg`}>
             <Text style={textStyle}>MONTH</Text>
             <TextInput 
               style={imputStyle} 
@@ -188,7 +188,7 @@ export default function AssetExample() {
               />
           </View>
           {/* Year block */}
-          <View style={tw`w-160px h-100px ml-32px mr-240px  mt-57px rounded-lg`}>
+          <View style={tw`h-81px w-85px ml-16px mr-24px  mt-57px rounded-lg`}>
             <Text style={textStyle}>YEAR</Text>
             <TextInput 
               style={imputStyle} 
@@ -204,17 +204,17 @@ export default function AssetExample() {
         {shouldShow ? (
         <View style={tw`h-30px flex-row bg-white`}>
           {shouldShowday ? (
-          <View style={tw`w-160px ml-56px`}>
+          <View style={tw`w-85px ml-24px mt--30px`}>
             <Text style={tw`text-[#FF5757] italic`}>{errMsg1}</Text> 
           </View>
         ) : null}
           {shouldShowmonth ? ( 
-            <View style={tw`w-160px ml-32px`}>
+            <View style={tw`w-85px ml-16px mt--30px`}>
               <Text style={tw`text-[#FF5757] italic`}>{errMsg2}</Text>  
             </View>
         ) : null}
           {shouldShowyear ? (   
-            <View style={tw`w-160px ml-32px`}>
+            <View style={tw`w-85px ml-16px mt--30px`}>
               <Text style={tw`text-[#FF5757] italic`}>{errMsg3}</Text>           
             </View>
         ) : null}
@@ -224,30 +224,30 @@ export default function AssetExample() {
       </View>
       
  
-      <View style={tw`h-96px bg-white flex-row`}>
-        <View style={tw`ml-55px bg-blue-200 h-2px w-634px mt-48px`}></View>
+      <View style={tw`h-63px bg-white flex-row`}>
+        <View style={tw`ml-24px bg-blue-200 h-2px w-294px mt-30px`}></View>
         {/* <TouchableOpacity style={tw`bg-black h-96px w-96px rounded-full flex justify-center items-center h-screen`}> */}
-        <TouchableOpacity style={tw`bg-[#B999FF] h-96px w-96px rounded-full flex justify-center items-center h-screen`}
+        <TouchableOpacity style={tw`bg-[#B999FF] h-63px w-63px ml--178px rounded-full flex justify-center items-center h-screen`}
                           onPress={test}> 
             <Image style={{ 
-                width: 50, 
-                height: 50,
+                width: 24, 
+                height: 24,
                 }}
             source = {arr_icn} />
         </TouchableOpacity>
       </View>
 
-      <View style={tw`flex-row`}>
-        <View style={tw`w-650px flex-col`}>
-            <View style={tw`h-120px bg-white flex-row`}>
+      
+        <View style={styles.bootomView}>
+            <View style={tw`h-1/3 bg-white flex-row`}>
                 <Text 
-                  style={styles.sossatx2}
+                  style={styles.yearsText}
                   value={outputValue}
                 >{outputValue}</Text>
                 <Text style={styles.sossat}>years</Text>
             </View>
 
-            <View style={tw`h-120px bg-white flex-row`}>
+            <View style={tw`h-1/3 bg-white flex-row`}>
             <Text 
               style={styles.sossatx2}
               value={outputValue1}
@@ -255,7 +255,7 @@ export default function AssetExample() {
                 <Text style={styles.sossat}>months</Text>
             </View>
 
-            <View style={tw`h-158px bg-white flex-row rounded-bl-3xl`}>
+            <View style={styles.bootomView2}>
                 <Text 
                 style={styles.sossatx2}
                 value={outputValue2}
@@ -263,9 +263,9 @@ export default function AssetExample() {
                 <Text style={styles.sossat}>days</Text>
             </View>
         </View>
-        <View style={tw`w-190px h-1/1 bg-white rounded-br-full`}>
-        </View>
-      </View>
+        {/* <View style={tw`w-190px h-1/1 bg-white rounded-br-full`}>
+        </View> */}
+      
 
     </View>
   );
@@ -275,13 +275,27 @@ const styles = StyleSheet.create({
   sossat:{
       marginLeft: '5px',
       fontFamily: 'Poppins',
-      fontSize: 70
+      fontSize: 50,
+      height: '46px',
+      paddingBottom: '70px'
     },
     sossatx2:{
       color: '#B999FF',
-      marginLeft: '60px',
+      marginLeft: '25px',
       fontFamily: 'Poppins',
-      fontSize: 70
+      fontSize: 50
+    },
+    yearsText:{
+      color: '#B999FF',
+      marginLeft: 25,
+      fontFamily: 'Poppins',
+      fontSize: 50,
+      marginTop: 10
+    },
+    yearsNum:{
+      marginLeft: '5px',
+      fontFamily: 'Poppins',
+      fontSize: 50
     },
     
     
@@ -290,36 +304,52 @@ const styles = StyleSheet.create({
 
     textNormal: {
       color: '#707070', //text-[#707070]
-      height: '28px', //h-28px 
+      height: 12, //h-28px 
       fontWeight: 800, //font-extrabold 
-      letterSpacing: '3px', //tracking-3px
+      letterSpacing: 2, //tracking-3px
+      marginBottom: 9
     },
 
     textPressed: {
       color: '#FF5757', //text-[#FF5757]
-      height: '28px', //h-28px 
+      height: 12, //h-28px 
       fontWeight: 800, //font-extrabold 
-      letterSpacing: '3px', //tracking-3px
+      letterSpacing: 2, //tracking-3px
+      marginBottom: 9
     },
 
     imputNormal: {
-      height: '72px',
-      paddingLeft: '25px',
+      height: 53,
+      paddingLeft: 16,
       borderRadius: '0.5rem',
       border: '1px solid #d7d7d7',
-      fontSize: '1.875rem',
-      lineHeight: '2.25rem',
-      fontWeight: 800,
+      fontsize: '1.875rem', /* 16px */
+      lineheight: '2.25rem', /* 24px */
+      fontWeight: '800',
       color: '#707070'
     },
     imputPressed: {
-      height: '72px',
-      paddingLeft: '25px',
+      height: 53,
+      paddingLeft: 16,
       borderRadius: '0.5rem',
       border: '1px solid #FF5757',
-      fontSize: '1.875rem',
-      lineHeight: '2.25rem',
-      fontWeight: 800,
+      ontsize: '1.875rem', /* 16px */
+      lineheight: '2.25rem', /* 24px */
+      fontWeight: '800',
       color: '#707070'
+    },
+    //w-343px flex-col
+    bootomView:{
+      flexDirection: 'column',
+      width: '343px',
+      height: '266px'
+    },
+    //h-158px bg-white flex-row rounded-bl-3xl
+    bootomView2:{
+      flexDirection: 'row',
+      height: '1/3',
+      backgroundColor: 'white',
+      borderBottomRightRadius: 100,
+      borderBottomLeftRadius: 24
     }
 });
